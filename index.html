@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
+    <!-- NAVBAR START -->
     <header class="container-navbar">
       <div class="logo">
         <img src="assets/image/logo/logo.png" alt="..." />
       </div>
       <nav>
         <ul class="nav-menu">
-          <li><a href="home.html" class="navbar">HOME</a></li>
+          <li><a href="index.html" class="navbar nav-active">HOME</a></li>
           <li><a href="about.html" class="navbar">ABOUT</a></li>
           <li><a href="services.html" class="navbar">SERVICES</a></li>
           <li><a href="portofolio.html" class="navbar">PORTOFOLIO</a></li>
@@ -27,14 +29,30 @@
         </ul>
       </nav>
     </header>
+    <!-- NAVBAR END -->
 
-    <section class="hero">
+    <!-- HERO START -->
+    <section id="hero" class="hero">
       <div class="hero-content">
-        <h1>HELLO WE'RE BIZPRO</h1>
-        <p>SUB HEAD, MOTTO OR MISSION SUBTITLE</p>
-        <button>SEE OUR PROJECTS</button>
+        <div class="hero-content-wrap">
+          <h1 data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">HELLO WE'RE BIZPRO</h1>
+        </div>
+        <div class="hero-content-wrap">
+          <p data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">SUB HEAD, MOTTO OR MISSION SUBTITLE</p>
+        </div>
+        <button data-aos="fade-up" data-aos-delay="1400" data-aos-duration="1300">SEE OUR PROJECTS</button>
       </div>
+
+      <button id="hero-btn-prev" class="slider-btn-prev">‹</button>
+      <button id="hero-btn-next" class="slider-btn-next">›</button>
     </section>
+    <!-- HERO END -->
+
+    <!-- ABOUT US START -->
+    <section class="about-us">
+      
+    </section>
+    <!--  ABOUT US END -->
 
     <!-- <button id="hapus">hapus warna</button>
     <button id="change">tambahkan warna biru</button>
@@ -48,5 +66,10 @@
     <div id="box"></div> -->
 
     <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

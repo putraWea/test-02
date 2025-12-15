@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
+  --color-logo: rgb(216, 61, 77);
 }
 
 /* ============= HOME START ================ */
@@ -10,7 +11,7 @@ body {
   display: flex;
   position: absolute;
   width: 100%;
-  height: 13vh;
+  height: 10vh;
   z-index: 10;
   align-items: center;
   justify-content: space-evenly;
@@ -19,14 +20,26 @@ body {
 .nav-menu {
   display: flex;
   list-style-type: none;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .nav-menu a {
   text-decoration: none;
   color: black;
-  font-size: medium;
+  font-size: small;
   color: white;
+  font-weight: 550;
+  padding: 0.8rem;
+}
+
+.nav-menu a:hover {
+  color: var(--color-logo);
+  /* ambil nilai dari variable --color-logo yang sudah di define di dalam body di atas */
+  transition: 0.3s;
+}
+
+.nav-active {
+  color: var(--color-logo) !important;
 }
 
 .hero {
@@ -37,6 +50,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  --hero-bg: url("assets/image/home/slide-1.jpg");
 }
 
 /* untuk mainin animasi backgroundnya agar isi di dalam class hero tidak kena efeknya */
@@ -47,7 +61,8 @@ body {
   /* before atau after umumnya pakai position absolut ya, agar hadir menimpa atau menonjol dari parent classnya */
   inset: 0;
   /* ini buat ukuran agar memnuhi semua tempat di parent class nya -> manualnya pakai width dan height */
-  background-image: url("assets/image/home/slide-1.jpg");
+  /* background-image: url("assets/image/home/slide-1.jpg"); */
+  background-image: var(--hero-bg);
   background-size: cover;
   background-position: center;
   animation: zoomOut 20s linear infinite;
@@ -81,33 +96,37 @@ body {
   /* ini ada z-index agar tidak tertutup oleh class hero (parent classnya)*/
 }
 
+.hero-content-wrap {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
 .hero h1 {
   font-size: 50px;
-  margin-bottom: 0.8rem;
 }
 
 .hero p {
-  font-size: 15px;
-  margin-bottom: 2rem;
+  font-size: 17px;
   font-weight: 500;
 }
 
-.hero button {
+.hero .hero-content button {
   position: relative;
-  font-size: 10px;
-  padding: 15px;
+  font-size: 13px;
+  padding: 17px;
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid rgb(216, 61, 7);
+  border: 1px solid var(--color-logo);
   color: white;
-  font-weight: 500;
+  font-weight: 100;
+  margin-top: 0.7rem;
 }
 
 /* pakai ::before buat membuat pseudo element di button nya, agar bisa di atur untuk animasi manual atau buatannya nya  */
-.hero button::before {
+.hero .hero-content button::before {
   content: "";
   position: absolute;
-  background-color: rgb(216, 61, 77);
+  background-color: var(--color-logo);
   width: 0;
   /* dibuat pseudo elemnet ini belum memenuhi panjangnya atau sama dengan 0px dari panjang parent class nya */
   height: 100%;
@@ -118,10 +137,38 @@ body {
   /* karena kita pakai tulisan "see our project" - nya di dalam button langsung maka butuh z-index, jika itu teksnya pakai <span> atau apa tidak perlu z-index cukup jadi kan ::before */
 }
 
-.hero button:hover::before {
+.hero .hero-content button:hover::before {
   width: 100%;
   /* di ubah panjang nya menjadi 100 sehingga menciptkan efek fill backgrounf from left to right */
   transition-duration: 0.4s;
+}
+
+.slider-btn-prev {
+  position: absolute;
+  background-color: transparent;
+  margin-right: 95%;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  color: rgb(200, 200, 200);
+  padding: 10px;
+}
+
+.slider-btn-next {
+  position: absolute;
+  background-color: transparent;
+  margin-left: 95%;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  color: rgb(200, 200, 200);
+  padding: 10px;
+}
+
+.slider-btn-prev:hover,
+.slider-btn-next:hover {
+  background-color: rgba(104, 104, 104, 0.179);
+  transition: 0.4s;
 }
 
 /* #box {
@@ -155,3 +202,10 @@ body {
 } */
 
 /* ============= HOME END ================ */
+
+/* ============ ABOUT START ============ */
+
+.about-us {
+  height: 95vh;
+
+}
