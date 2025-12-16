@@ -26,6 +26,7 @@
 //   });
 // });
 
+// NEXT DAN PREV HERO START
 const hero_btn_prev = document.getElementById("hero-btn-prev");
 const hero_btn_next = document.getElementById("hero-btn-next");
 const hero = document.getElementById("hero");
@@ -45,3 +46,38 @@ function handleHeroslide(direction) {
 
 hero_btn_next.addEventListener("click", () => handleHeroslide("next"));
 hero_btn_prev.addEventListener("click", () => handleHeroslide("prev"));
+// NEXT DAN PREV HERO END
+
+//UNTUK NAVBAR START
+// Gunakan querySelector untuk mengambil satu elemen secara langsung
+const navbar = document.querySelector(".container-navbar");
+let timerDisplay; // Variabel untuk menyimpan timer
+let isAtTop = true; //penanda apakah posisi saat ini di paling atas
+
+window.onscroll = () => {
+  if (window.scrollY > 0) {
+    if (isAtTop) {
+      navbar.style.setProperty("display", "none");
+      navbar.classList.remove("nav-down");
+
+      // 1. Bersihkan timer sebelumnya agar tidak bentrok
+      clearTimeout(timerDisplay);
+
+      // 2. Set timer untuk munculkan kembali setelah 3 detik (3000ms)
+      timerDisplay = setTimeout(() => {
+        navbar.style.setProperty("display", "flex");
+        navbar.classList.add("nav-down");
+      }, 300);
+
+      navbar.style.setProperty("--container-nav", "rgba(21, 20, 20, 0.51)");
+
+      isAtTop = false; //ubah penanda agar animasi tidak di ulang-ulang saat scroll terus ke bawah
+    }
+  } else {
+    navbar.classList.remove("nav-down");
+    navbar.style.setProperty("--container-nav", "rgba(21, 20, 20, 0)");
+
+    isAtTop = true; //kembalikan penanda ke true agar siap di animasikan lagi saat turun nanti
+  }
+};
+//UNTUK NAVBAR END
