@@ -262,7 +262,6 @@ body {
   gap: 1rem;
   margin-left: 10%;
   margin-right: 10%;
-  background-color: aqua;
 }
 
 .vision {
@@ -273,7 +272,6 @@ body {
   align-items: center;
   padding: 1rem;
   justify-content: center;
-  background-color: black;
 }
 
 .vision-wrap-img {
@@ -387,5 +385,5 @@ body {
   justify-content: center;
   height: 300px;
   align-items: center;
- }
+}
 /* SERVICES END */
