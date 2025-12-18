@@ -262,6 +262,7 @@ body {
   gap: 1rem;
   margin-left: 10%;
   margin-right: 10%;
+  background-color: aqua;
 }
 
 .vision {
@@ -272,6 +273,7 @@ body {
   align-items: center;
   padding: 1rem;
   justify-content: center;
+  background-color: black;
 }
 
 .vision-wrap-img {
@@ -353,6 +355,37 @@ body {
 .container-services {
   height: 130vh;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.services-content {
+  background-color: rgb(44, 45, 45);
+  width: 90%;
+  height: 90%;
+  padding: 3%;
+}
+
+.services-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-item-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2rem;
+  margin: 0 10% 0 10%;
+}
+
+.services-item {
+  background-color: yellowgreen;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  align-items: center;
+ }
 /* SERVICES END */
